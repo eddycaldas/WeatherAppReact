@@ -5,8 +5,8 @@ class Title extends Component {
   render() {
     return (
       <div>
-       <h1>What's the weather</h1>
-       <p>Find out the weather anywhere in the world</p>
+       <h1>Weather Finder</h1>
+       <p>Find out temperature, conditions amd more...</p>
       </div>
     );
   }
