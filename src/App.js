@@ -49,18 +49,34 @@ getWeather = async (e) => {
   render() {
     return (
       <div>
-        <Title />
-        <Form getWeather={this.getWeather}/>
-        <Weather temperature={this.state.temperature}
-          city={this.state.city}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          wind={this.state.wind}
-          error={this.state.error}
-        />
+        <div className='wrapper'>
+          <div className='main'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-xs-7 title-container'>
+                  <Title />
+                </div>
+                <div className='col-xs-5 form-container'>
+                  <Form getWeather={this.getWeather}/>
+                  <Weather temperature={this.state.temperature}
+                    city={this.state.city}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    wind={this.state.wind}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+<div>
+
+
+</div>
