@@ -21,9 +21,9 @@ class App extends React.Component {
 getWeather = async (e) => {
   e.preventDefault();
   const city = e.target.elements.city.value;
-  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${API_KEY}`);
+  const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${API_KEY}&units=imperial`);
   const data = await api_call.json();
-  // console.log(data);
+   console.log(data);
   if ( city ) {
     this.setState({
       temperature: data.main.temp,
@@ -31,7 +31,12 @@ getWeather = async (e) => {
       humidity: data.main.humidity,
       description: data.weather[0].description,
       wind: data.wind.speed,
-      error: ''
+      error: '',
+      // concertImage: data._embedded.events[0].images[0].url,
+      // concertName: data._embedded.events[0].name,
+      // concertDate: data._embedded.events[0].dates["start"].localDate,
+      // concertLocation: data._embedded.events[0].embedded.venues[0].name,
+      // concertBuyTicket: data._embedded.events[0].url
     })
   } else {
     this.setState({
@@ -43,7 +48,6 @@ getWeather = async (e) => {
       error: 'Please enter a City'
     })
   }
-
 }
 
   render() {
@@ -76,7 +80,3 @@ getWeather = async (e) => {
 }
 
 export default App;
-<div>
-
-
-</div>
